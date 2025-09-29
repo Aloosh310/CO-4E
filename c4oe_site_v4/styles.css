@@ -149,3 +149,32 @@ section{ border-top:1px solid var(--navy-50); }
     height: 260px !important;
   }
 }
+/* Header layout — stays horizontal, wraps neatly on small screens */
+header .nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;          /* allows items to wrap to a second line if needed */
+}
+
+nav ul{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  flex-wrap:wrap;          /* keep items horizontal but allow wrap */
+}
+
+.lang{ display:flex; gap:8px; }
+
+/* Small screens: center things but keep them in rows (not columns) */
+@media (max-width: 768px){
+  header .nav{ justify-content:center; }
+  nav ul{ justify-content:center; }    /* still horizontal */
+  .brand img{ height:24px; }           /* slight downscale if you use an image logo */
+}
+
+

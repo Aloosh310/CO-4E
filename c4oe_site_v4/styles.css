@@ -108,3 +108,44 @@ section{ border-top:1px solid var(--navy-50); }
 .logo{ background:#fff; border:1px solid var(--navy-50); }
 .gallery-ph{ border:2px dashed var(--navy-50); border-radius:12px; background:linear-gradient(135deg,#f8fafc,#eef2f7); display:flex; align-items:center; justify-content:center; font-weight:700; color:#475569; }
 .brand img{ height:28px; display:block; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+  .hero img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .logos {
+    grid-template-columns: 1fr;
+  }
+  .gallery-ph {
+    height: 260px !important;
+  }
+}

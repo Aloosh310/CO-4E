@@ -1,180 +1,164 @@
-
+/* ========== Base ========== */
 :root{
   --navy:#0b2a4a;
-  --navy-700:#0e345b;
+  --navy-50:#eef3f8;
   --orange:#ff7a1a;
-  --bg:#ffffff;
-  --fg:#0f172a;
+  --text:#0f172a;
   --muted:#475569;
-  --border:#e2e8f0;
-  --card:#f8fafc;
-  --shadow:0 8px 20px rgba(16,24,40,.08);
+  --border:#e5e7eb;
 }
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-a{color:var(--navy);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
-/* header */
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-.brand{font-weight:800;color:var(--navy);font-size:20px}
-nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-nav a{color:var(--fg);font-weight:600}
-.lang{display:flex;gap:8px;align-items:center}
-.lang button{border:1px solid var(--border);background:#fff;padding:6px 10px;border-radius:8px;cursor:pointer;font-weight:600}
-.lang button.active{background:var(--orange);color:#fff;border-color:var(--orange)}
-
-/* hero */
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding:64px 0;align-items:center}
-.hero h1{font-size:38px;line-height:1.2;margin:0 0 12px;color:var(--navy)}
-.muted{color:var(--muted)}
-.badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.badge{border:1px solid var(--border);background:var(--card);padding:6px 10px;border-radius:999px;font-size:13px}
-.cta-row{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 16px;border-radius:10px;border:1px solid var(--border);font-weight:700;transition:transform .2s ease, box-shadow .2s ease}
-.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.btn-primary{background:var(--orange);color:#fff;border-color:var(--orange)}
-.btn-secondary{background:#fff;color:var(--navy)}
-
-.hero-visual{background:linear-gradient(135deg,#e0f2fe,#f0f9ff);border:1px solid var(--border);border-radius:18px;height:280px;display:flex;align-items:center;justify-content:center;color:#0c4a6e;font-weight:700}
-
-/* sections */
-section{padding:48px 0;border-top:1px solid var(--border)}
-h2{margin:0 0 16px;font-size:28px;color:var(--navy)}
-.sub{font-size:15px;color:var(--muted);margin:0 0 18px}
-
-/* reveal on scroll */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
-.reveal-visible{opacity:1;transform:none}
-
-/* why cards */
-.why-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.why-card{border:1px solid var(--border);background:#fff;border-radius:14px;padding:16px;box-shadow:var(--shadow)}
-.why-card h3{color:var(--navy-700);margin:0 0 8px;font-size:18px}
-
-/* services */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{border:1px solid var(--border);background:var(--card);border-radius:16px;padding:18px;transition:transform .2s ease, box-shadow .2s ease}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.card h3{margin:0 0 8px;font-size:20px;color:var(--navy-700)}
-.card ul{margin:8px 0 0 18px}
-
-/* methodology */
-.cycle{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:stretch}
-.step{border:1px dashed var(--border);background:#fff;padding:12px;border-radius:12px;text-align:center;font-weight:700;font-size:14px}
-
-/* logos */
-.logos{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:center}
-.logo{height:46px;border:1px solid var(--border);border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted)}
-
-/* quote form */
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-label{font-weight:700;font-size:14px}
-input,select,textarea{width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;background:#fff}
-textarea{min-height:120px}
-
-/* footer */
-footer{padding:32px 0;border-top:1px solid var(--border);font-size:14px}
-.footer-grid{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-/* rtl */
-html[dir="rtl"] body{direction:rtl}
-html[dir="rtl"] .hero{grid-template-columns:.9fr 1.1fr}
-html[dir="rtl"] nav ul{flex-direction:row-reverse}
-
-/* responsive */
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr}
-  .logos{grid-template-columns:repeat(3,1fr)}
-  .cycle{grid-template-columns:repeat(3,1fr)}
-  .why-cards{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, Noto Sans, "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  line-height:1.5;
+  background:#fff;
 }
 
-
-/* Navy accents (overrides) */
-:root{ --navy:#0b2a4a; --navy-50:#eef3f8; --orange:#ff7a1a; }
-header{ border-bottom:2px solid var(--navy-50); }
-.nav a{ color: var(--navy); }
-.btn-primary{ background:var(--orange); border-color:var(--orange); }
-.btn-secondary{ border-color:var(--navy); color:var(--navy); }
-.btn-secondary:hover{ background:var(--navy); color:#fff; }
-.hero h1{ color:var(--navy); }
-.badge{ border-color:var(--navy-50); }
-section{ border-top:1px solid var(--navy-50); }
-.logo{ background:#fff; border:1px solid var(--navy-50); }
-.gallery-ph{ border:2px dashed var(--navy-50); border-radius:12px; background:linear-gradient(135deg,#f8fafc,#eef2f7); display:flex; align-items:center; justify-content:center; font-weight:700; color:#475569; }
-.brand img{ height:28px; display:block; }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr !important;
-    text-align: center;
-  }
-  .hero img {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-  .logos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 16px;
 }
 
-@media (max-width: 480px) {
-  nav ul {
-    font-size: 15px;
-  }
-  h1 {
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 20px;
-  }
-  .logos {
-    grid-template-columns: 1fr;
-  }
-  .gallery-ph {
-    height: 260px !important;
-  }
+/* ========== Header / Nav (horizontal, wraps neatly) ========== */
+header{
+  position:sticky; top:0; z-index:40;
+  background:#fff;
+  border-bottom:2px solid var(--navy-50);
 }
-/* Header layout — stays horizontal, wraps neatly on small screens */
-header .nav{
+.nav{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:12px;
-  flex-wrap:wrap;          /* allows items to wrap to a second line if needed */
+  padding:14px 0;
+  flex-wrap:wrap; /* allows a second row on small screens without turning vertical */
 }
+.brand img{height:28px;width:auto;display:block}
 
 nav ul{
   display:flex;
   align-items:center;
   gap:16px;
-  margin:0;
-  padding:0;
-  list-style:none;
-  flex-wrap:wrap;          /* keep items horizontal but allow wrap */
+  margin:0; padding:0; list-style:none;
+  flex-wrap:wrap;           /* keep items horizontal but allow wrap */
+}
+nav a{
+  text-decoration:none;
+  color:var(--navy);
+  font-weight:500;
+}
+nav a:hover{color:var(--orange)}
+
+.lang{display:flex; gap:8px}
+.lang button{
+  border:1px solid var(--border);
+  background:#fff; color:#111; padding:6px 10px;
+  border-radius:8px; cursor:pointer;
+}
+.lang .active{background:var(--orange); border-color:var(--orange); color:#fff}
+
+/* ========== Hero ========== */
+.hero{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:24px;
+  padding:36px 0;
+}
+.hero h1{font-size:38px; line-height:1.1; margin:0 0 12px; color:var(--navy)}
+.hero p.sub{color:var(--muted); margin:0 0 18px}
+.hero-media{
+  min-height:240px;
+  background:linear-gradient(180deg,#f8fafc,#edf2f7);
+  border:1px solid var(--border);
+  border-radius:16px;
 }
 
-.lang{ display:flex; gap:8px; }
+/* Buttons */
+.btn{
+  display:inline-block; border:1px solid var(--border);
+  padding:10px 14px; border-radius:10px; text-decoration:none;
+  color:#0f172a; background:#fff; cursor:pointer;
+}
+.btn:hover{border-color:#cbd5e1}
+.btn-primary{background:var(--orange); border-color:var(--orange); color:#fff}
+.btn-primary:hover{filter:brightness(.96)}
+.btn-secondary{border-color:var(--navy); color:var(--navy)}
+.btn-secondary:hover{background:var(--navy); color:#fff}
 
-/* Small screens: center things but keep them in rows (not columns) */
-@media (max-width: 768px){
-  header .nav{ justify-content:center; }
-  nav ul{ justify-content:center; }    /* still horizontal */
-  .brand img{ height:24px; }           /* slight downscale if you use an image logo */
+/* Badges */
+.badge-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+.badge{
+  display:inline-block; padding:6px 10px;
+  border:1px solid var(--navy-50); border-radius:999px; font-size:13px; color:#0f172a;
+  background:#fff;
 }
 
+/* ========== Sections / Cards ========== */
+section{padding:38px 0; border-top:1px solid var(--navy-50)}
+h2{font-size:28px; margin:0 0 10px}
+.cards{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+.card{
+  background:#fff; border:1px solid var(--navy-50); border-radius:14px; padding:16px;
+  box-shadow:0 2px 4px rgba(2,6,23,.03);
+}
+.card h3{margin:0 0 6px; font-size:18px}
+.muted{color:var(--muted)}
 
+/* ========== Partners logos grid (responsive) ========== */
+.logos{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(90px, 1fr)); /* desktop */
+  gap:16px;
+  align-items:center;
+  justify-items:center;
+}
+.logos img.logo{
+  max-height:46px;
+  width:auto; height:auto; display:block;
+}
+/* Remove any old card look on .logo if present */
+.logo{border:0; background:transparent}
+
+/* ========== Forms ========== */
+.form-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+label{display:block; font-weight:600; margin-bottom:6px}
+input,select,textarea{
+  width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:10px;
+  font:inherit;
+}
+textarea{min-height:120px}
+
+/* ========== Footer ========== */
+footer{padding:22px 0; border-top:2px solid var(--navy-50); margin-top:24px}
+.footer-grid{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+footer a{text-decoration:none; color:var(--navy)} footer a:hover{color:var(--orange)}
+
+/* ========== Methodology page helpers ========== */
+.gallery-ph{
+  border:2px dashed var(--navy-50);
+  border-radius:12px;
+  background:linear-gradient(135deg,#f8fafc,#eef2f7);
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; color:#475569;
+}
+.methodology img{max-width:100%; height:auto}
+
+/* ========== Scroll Reveal (if you use it in script.js) ========== */
+.reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
+.reveal-visible{opacity:1; transform:none}
+
+/* ========== Responsive ========== */
+@media (max-width:1024px){
+  .cards{grid-template-columns:1fr}
+  .logos{grid-template-columns: repeat(3, minmax(90px,1fr))}
+}
+
+@media (max-width:768px){
+  .hero{grid-template-columns:1fr; text-align:center}
+  .hero-media{min-height:200px}
+  .nav{justify-content:center}
+  nav ul{justify-content:center}     /* keep horizontal, but all*
